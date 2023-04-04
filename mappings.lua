@@ -24,5 +24,6 @@ return {
   t = {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
+    ["<C-s>"] = { "<C-\\><C-n>:w!<cr>", desc = "Save File" },
   },
 }
