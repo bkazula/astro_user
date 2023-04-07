@@ -11,7 +11,9 @@ return {
     ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
     ["<leader>bD"] = {
       function()
-        require("astronvim.utils.status").heirline.buffer_picker(function(bufnr) require("astronvim.utils.buffer").close(bufnr) end)
+        require("astronvim.utils.status").heirline.buffer_picker(
+          function(bufnr) require("astronvim.utils.buffer").close(bufnr) end
+        )
       end,
       desc = "Pick to close",
     },
@@ -20,10 +22,21 @@ return {
     ["<leader>b"] = { name = "Buffers" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+    ["<leader>fe"] = { function() require("telescope.builtin").oldfiles() end, desc = "Find history" },
+    -- Add mappings for copilot.lua
+
+    ["<leader>,p"] = {
+      function() require("copilot.panel").open { position = "bottom", ratio = 0.4 } end,
+      desc = "Open Copilot panel",
+    },
+    ["<leader>,a"] = { function() require("copilot.panel").accept() end, desc = "Accept Copilot suggestion from panel" },
   },
-  t = {
+  i = {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
     ["<C-s>"] = { "<C-\\><C-n>:w!<cr>", desc = "Save File" },
+    ["<C-a>"] = { function() require("copilot.suggestion").accept() end, desc = "Accept Copilot suggestion" },
+    ["<C-e>"] = { function() require("copilot.suggestion").next() end, desc = "Accept Copilot suggestion" },
+    ["<C-q>"] = { function() require("copilot.suggestion").prev() end, desc = "Accept Copilot suggestion" },
   },
 }
