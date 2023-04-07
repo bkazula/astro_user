@@ -36,7 +36,7 @@ return {
     -- ["<esc>"] = false,
     ["<C-s>"] = { "<C-\\><C-n>:w!<cr>", desc = "Save File" },
     ["<C-a>"] = { function() require("copilot.suggestion").accept() end, desc = "Accept Copilot suggestion" },
-    ["<C-e>"] = { function() require("copilot.suggestion").next() end, desc = "Accept Copilot suggestion" },
-    ["<C-q>"] = { function() require("copilot.suggestion").prev() end, desc = "Accept Copilot suggestion" },
+    ["<C-e>"] = { function() require("copilot.suggestion").next() end, desc = "Next Copilot suggestion" },
+    ["<C-q>"] = { function() require("copilot.suggestion").prev() end, desc = "Previous Copilot suggestion" },
   },
 }
