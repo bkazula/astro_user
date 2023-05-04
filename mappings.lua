@@ -24,7 +24,9 @@ return {
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
     ["<leader>fe"] = { function() require("telescope.builtin").oldfiles() end, desc = "Find history" },
     -- Add mappings for copilot.lua
-
+    ["<leader>,"] = {
+      desc = "Copilot",
+    },
     ["<leader>,p"] = {
       function() require("copilot.panel").open { position = "bottom", ratio = 0.4 } end,
       desc = "Open Copilot panel",
@@ -36,6 +38,7 @@ return {
     -- ["<esc>"] = false,
     ["<C-s>"] = { "<C-\\><C-n>:w!<cr>", desc = "Save File" },
     ["<C-a>"] = { function() require("copilot.suggestion").accept() end, desc = "Accept Copilot suggestion" },
+    ["<C-z>"] = { function() require("copilot.suggestion").accept_word() end, desc = "Accept Copilot word suggestion" },
     ["<C-e>"] = { function() require("copilot.suggestion").next() end, desc = "Next Copilot suggestion" },
     ["<C-q>"] = { function() require("copilot.suggestion").prev() end, desc = "Previous Copilot suggestion" },
   },
